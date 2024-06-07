@@ -3,6 +3,7 @@ name: Transfer New Issue to Docs Project
 on:
   issues:
     types: [opened]
+  workflow_call:
 
 jobs:
   transfer:
