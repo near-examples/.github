@@ -8,7 +8,7 @@ on:
       github-token:
         type: string
         required: true
-      description: GitHub token used to authenticate API calls
+        description: GitHub token used to authenticate API calls
 
 jobs:
   transfer:
