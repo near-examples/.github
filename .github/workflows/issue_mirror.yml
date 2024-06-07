@@ -4,6 +4,11 @@ on:
   issues:
     types: [opened, reopened]
   workflow_call:
+    inputs:
+      github-token:
+        type: string
+        required: true
+      description: GitHub token used to authenticate API calls
 
 jobs:
   transfer:
@@ -12,7 +17,6 @@ jobs:
       - name: Transfer Issue to NEAR DevX
         uses: actions/github-script@v5
         with:
-          github-token: ${{secrets.GH_TOKEN}}
           script: |
             const issueTitle = context.payload.issue.title;
             const issueBody = context.payload.issue.body;
