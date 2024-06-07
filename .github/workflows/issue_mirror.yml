@@ -2,8 +2,13 @@ name: Transfer New Issue to Docs Project
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
   workflow_call:
+    inputs:
+      github-token:
+        type: string
+        required: true
+        description: GitHub token used to authenticate API calls
 
 jobs:
   transfer:
